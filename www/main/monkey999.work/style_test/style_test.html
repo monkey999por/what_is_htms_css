@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_test.css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <title>Style Test</title>
+</head>
+
+<body>
+    <main>
+        <dummy>アアア</dummy>
+        <p>ああああ</p>
+        <!-- tag selector -->
+        <section class="tag_selector">
+            <h6>tag selector </h1>
+        </section>
+
+        <!-- http://www.htmq.com/csskihon/005.shtml -->
+        <!-- https://www.tohoho-web.com/css/selector.htm#Universal -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors -->
+        <!-- class selector -->
+        <section class="class_selector">
+            <p class="pretty">これはprettyな文章ですa</p>
+            <p class="cool">これはcoolな文章です</p>
+            <p class="cool">これもcoolな文章です</p>
+            <p class="cool1 pretty1">これは、coolでprettyな文章です</p>
+            <div class="cool1">
+                <!-- クラス指定にスペースは開いててもOK -->
+                <p class=" pretty1">this is no cool and pretty</p>
+                <div class="test">tag and class </div>
+                <p class="test">tag and class (dose not match tag)</p>
+            </div>
+        </section>
+        <section class="attr_test">
+            <article>
+                <div id="t">aaa</div>
+            </article>
+            <div id="3aaa">aaaadfdfdf</div>
+            <div id="a3">ffaa</div>
+        </section>
+
+        <section class="binding">
+            <ul>
+                <li>red</li>
+                <ul>
+                    <li>blue</li>
+                    <ul>
+                        <li>greenyellow</li>
+                    </ul>
+                </ul>
+            </ul>
+        </section>
+        <section class="child_selector">
+            <div>
+                aaa
+                <div>
+                    bbb
+                </div>
+                <p>ppp</p>
+            </div>
+            <div class="sec">
+                <p>子の段落です</p>
+                <div>
+                    <p>子孫の段落です（除外）</p>
+                    <div>
+                        <p>子孫の段落です（除外） aa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>スタイルは適用されません。</div>
+            <h1>ヘッダ</h1>
+            <div>スタイルが適用されます。</div>
+            <div>スタイルは適用されます。</div>
+            <p>dummy</p>
+            <div>スタイルは適用されます。</div>
+        </section>
+
+        <section>
+            <div class="c1">c1</div>
+            <div class="c1">c1</div>
+            <div class="c2">c2</div>
+            <div class="c1">c1</div>
+        </section>
+        <section>
+            <div class="c1">c1 next</div>
+
+        </section>
+        <section class="pesudo_element">
+            <p>first line<br>second line</p>
+        </section>
+
+
+        <section class="input">
+
+            <label for="intest">test input</label>
+            <input type="number" name="intest" id="intest" max="3"><br><br>
+            <label for="test_check">正式に追加</label>
+            <input type="checkbox" name="test_check" id="test_check"><br>
+            <button class="add_footer_element">ふったに追加</button><br>
+            <button class="delete_footer_element">ふったから削除</button>
+
+        </section>
+        <div class="foot_space">
+            <div class="btn">
+                <p class="btn_text">Button[n]</p>
+            </div>
+        </div>
+        <div class="foot_dummy">
+            <p>dummy area</p>
+
+        </div>
+
+        <div class="foot_space button_area"></div>
+
+        <div class="overflow_test">
+            あいあいあいあいあ
+        </div>
+        <br><br><br>
+        <section class="sizing_item">
+            <img src="./img/star.png" alt="star.png">
+        </section>
+
+        <div class="box">
+            I have margin and padding set to 10% on all sides.
+        </div>
+
+
+
+        <div class="wrapper">
+            <div class="box"><img src="./img/star.png" alt="star" class="width"></div>
+            <div class="box"><img src="./img/star.png" alt="star" class="max"></div>
+            <div class="minibox"><img src="./img/star.png" alt="star" class="max"></div>
+        </div>
+
+        <div class="aaa">
+            <div class="box_2"><img src="./img/star.png" alt="star"></div>
+            <div class="box_2"><img src="./img/balloons.jpg" alt="balloons" class="cover"></div>
+            <div class="box_2"><img src="./img/balloons.jpg" alt="balloons" class="contain"></div>
+        </div>
+        <!-- <div class="wrapper">
+            <img src="star.png" alt="star">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div> -->
+        <section class="forms">
+            <h2>form control</h2>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="input your name">
+            </div>
+            <div><label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="input your mail addoress">
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Submit">
+            </div>
+        </section>
+        <section class="table_sample">
+            <table>
+                <caption>A summary of the UK's most famous punk bands</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Band</th>
+                        <th scope="col">Year formed</th>
+                        <th scope="col">No. of Albums</th>
+                        <th scope="col">Most famous song</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Buzzcocks</th>
+                        <td>1976</td>
+                        <td>9</td>
+                        <td>Ever fallen in love (with someone you shouldn't've)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The Clash</th>
+                        <td>1976</td>
+                        <td>6</td>
+                        <td>London Calling</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The Damned</th>
+                        <td>1976</td>
+                        <td>10</td>
+                        <td>Smash it up</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sex Pistols</th>
+                        <td>1975</td>
+                        <td>1</td>
+                        <td>Anarchy in the UK</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sham 69</th>
+                        <td>1976</td>
+                        <td>13</td>
+                        <td>If The Kids Are United</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Siouxsie and the Banshees</th>
+                        <td>1976</td>
+                        <td>11</td>
+                        <td>Hong Kong Garden</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Stiff Little Fingers</th>
+                        <td>1977</td>
+                        <td>10</td>
+                        <td>Suspect Device</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">The Stranglers</th>
+                        <td>1974</td>
+                        <td>17</td>
+                        <td>No More Heroes</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="2">Total albums</th>
+                        <td colspan="2">77</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section class="list_style">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        </section>
+        <kbd>Ctrl</kbd>
+        <div class="foot_space"></div>
+
+
+    </main>
+
+
+    <script src="style_test.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+www/.yarn/*
+!www/.yarn/patches
+!www/.yarn/plugins
+!www/.yarn/releases
+!www/.yarn/sdks
+!www/.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*

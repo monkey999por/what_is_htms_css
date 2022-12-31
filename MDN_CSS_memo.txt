@@ -1,0 +1,32 @@
+前提として
+ Cascading Style Sheets 
+cascading：何段も連なった小さな滝のこと。 
+転じて、同じものがいくつも数珠つなぎに連結された構造や、
+連鎖的あるいは段階的に物事が生じる様子を表す。
+
+
+CSSは親要素のスタイルを継承する。
+　⇒しないものもある。
+　　★するしないのルールは？
+　　　⇒主に常識に基づいているとのこと。https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#%E7%B6%99%E6%89%BF%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B
+
+
+
+■一括指定(ショートハンド)
+https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps/How_CSS_is_structured#%E4%B8%80%E6%8B%AC%E6%8C%87%E5%AE%9A
+
+```
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 15px;
+padding-left: 5px;
+```
+↓
+```
+padding: 10px 15px 15px 5px;
+
+```
+
+■ブラウザのロードの順番
+CSSに限った話じゃないけど重要
+https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps/How_CSS_works

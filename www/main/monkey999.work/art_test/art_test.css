@@ -1,0 +1,68 @@
+body {
+  /* background-color: rgb(252, 250, 229); */
+  margin: 0px;
+}
+/* color test */
+.mad_red {
+  background-color: rgb(221, 47, 82);
+}
+.akarui_orange {
+  background-color: rgb(225, 92, 15);
+}
+.mad_orange {
+  background-color: rgb(237, 63, 36);
+}
+.mad2_orange {
+  background-color: rgb(212, 37, 8);
+}
+.purple1 {
+  background-color: rgb(125, 68, 139);
+}
+.purple2 {
+  background-color: rgb(76, 17, 97);
+}
+.yellow1 {
+  background-color: rgb(252, 161, 54);
+}
+.yellow2 {
+  background-color: rgb(254, 188, 102);
+}
+.purple_black {
+  background-color: rgb(61, 5, 68);
+}
+.akarui_purple {
+  background-color: rgb(237, 178, 210);
+}
+.blue1 {
+  background-color: rgb(50, 158, 186);
+}
+.blue2 {
+  background-color: rgb(20, 127, 159);
+}
+.blue3 {
+  background-color: rgb(22, 108, 155);
+}
+.blue4 {
+  background-color: rgb(2, 49, 67);
+}
+.back_white1 {
+  background-color: rgb(225, 229, 206);
+  margin-left: auto;
+  margin-right: auto;
+  width: 40em;
+}
+.back_white2 {
+  background-color: rgb(252, 250, 229);
+}
+.red_pink {
+  background-color: rgb(229, 60, 91);
+}
+.art {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+.black {
+  background-color: rgb(11, 6, 2);
+}

@@ -1,0 +1,59 @@
+■背景とborder https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders
+background-color ※子要素に継承あり
+background-image ※background-colorと同時指定するとbackground-colorよりも上にくる。
+background-repeat ※background-imageの繰り返し方。no-repeat, repeat-x,-y, repeat
+background-size   ※画像サイズ
+background-position　※画像位置
+
+border: ボックスモデルのborderを設定
+
+■テキスト方向の操作　　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Handling_different_text_directions
+★ちょっとよくわからん？わかるけど「だから何？」が拭えない。
+
+■オーバーフローメモ　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Overflowing_content
+overflowで指定
+overflow: hidden ※コンテンツがあふれた場合は隠す
+overflow: auto   ※コンテンツがあふれた場合のみスクロールを出す
+overflow: scroll ※常にスクロール
+overflow-x,overflow-y ※軸方向のみ
+
+■CSSの値と値の型と単位　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Values_and_units
+・データ型：<number>,<percentage>, <length>とか
+・値の種類：各データ型に指定できる値はそれぞれのリファレンス参照。型をもつ値の指定はダブルクォーテーションが不要
+・どのプロパティにどのデータ型が使えるか？は慣れるしかない気がする
+・例：<length>: 相対的(relative): em, vw　絶対的(absolute): px, pt
+・<percentage>: 親要素に対して何パーセントか
+・<color>: 例：#02798b,rgb(2, 121, 139), rgba(2, 121, 139, 0.3),hsl(188, 97%, 28%) ※色相(hue), 彩度(saturation), 輝度(lightness) 
+・<position> ：top, left, tight, center
+・文字列型：ダブルクォーテーションで囲うもの（::afterのcontentとか）
+・関数型　url(),rgb()とか
+
+■CSS によるサイズ設定　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS
+・パーセント指定：基本的に親要素のサイズに対して何%か
+・max-width, min-width
+
+■画像・メディア・フォーム要素　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Images_media_form_elements
+・画像はobject-fitでサイズ調整する
+・input(text, email),textarea等のスタイルはボックス(divとかと)と同じ感じ
+・スタイル当てる前にreset処理しないとうまく当たらない（https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Images_media_form_elements#%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88%E5%87%A6%E7%90%86%E3%81%A8%E3%81%97%E3%81%A6%E3%81%BE%E3%81%A8%E3%82%81%E3%82%8B）
+
+■表のスタイリング　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Styling_tables
+・<thead>、<tbody>、<tfoot>で部分ごとに分ける
+・border-collapse: collapseを使う（枠線の部分）
+・table-layout: fixedを使う
+・サンプルで作ったのそのままマネするのがいいかも。表のパターンなんてこんなもんだし
+
+■CSS のデバッグ　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Debugging_CSS
+・バリデータがある（https://jigsaw.w3.org/css-validator/）
+
+■CSS の整理　https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Organizing
+・過剰なセレクターを避けるのが一般的らしい（article.main p.boxじゃなくて、.boxで指定）
+・SASS使え（素のCSSはそもそも推奨されてない？）
+
+■カスタムプロパティ？CSSの変数がでふぉるとでサポートされる　https://developer.mozilla.org/ja/docs/Web/CSS/Using_CSS_custom_properties
+★CSSの問題集的な
+https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Fundamental_CSS_comprehension
+https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/Creating_fancy_letterheaded_paper
+https://code-step.com/level-beginner/
+https://yellowlab.tools/
+https://qiita.com/teradonburi/items/5b8f79d26e1b319ac44f#%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0%E3%82%92props%E3%81%AB%E5%8D%B3%E6%99%82%E9%96%A2%E6%95%B0%E3%81%A7%E6%B8%A1%E3%81%99

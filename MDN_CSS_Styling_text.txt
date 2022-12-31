@@ -1,0 +1,27 @@
+■基本的なテキストとフォントの装飾 https://developer.mozilla.org/ja/docs/Learn/CSS/Styling_text/Fundamentals
+・color(選択された要素の前景のコンテンツの色)
+・font-family
+・font-size
+・font-style
+・font-weight
+・text-transform(フォントを変換する)
+・text-decoration(テキスト飾り)
+・text-shadow (影つけれる)
+★テキストのレイアウト
+・text-align(位置)
+・line-height（各行の高さ） ※文字サイズに対する文字の高さの比率で指定するのが一般的
+・letter-spacing（文字ごとの幅）
+・word-spacing（単語ごとの幅）
+・
+・他にもいろいろあるので何回も見るページだと思う
+
+■リストの装飾　https://developer.mozilla.org/ja/docs/Learn/CSS/Styling_text/Styling_lists
+・list-style-type（行頭記号。::markerでも同じことできない？）
+・list-style-position（行頭記号をリスト項目の内側に表示するか、その外側の各項目の先頭より前に表示するか）
+・list-style-image（行頭記号に画像を設定）
+・(HTML)<ol>のstart属性、reverse属性使うとリストの数字のスタート位置変えたり順番逆にしたりできる
+
+■ウェブフォント https://developer.mozilla.org/ja/docs/Learn/CSS/Styling_text/Web_fonts
+・これは頻繁に使うものでもないからフォント変えたいときにだけみればいい
+
+

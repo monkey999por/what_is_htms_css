@@ -1,0 +1,10 @@
+{
+  "name": "komorikomasha",
+  "packageManager": "yarn@3.3.1",
+  "dependencies": {
+    "browser-sync": "^2.27.11"
+  },
+  "scripts": {
+    "server": "browser-sync start --config bs-config.js"
+}
+}

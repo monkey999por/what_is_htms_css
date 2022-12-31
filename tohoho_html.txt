@@ -1,0 +1,129 @@
+■最初に読むべきもの
+https://www.tohoho-web.com/html/memo/index.htm
+
+
+■メモ
+・形式
+<要素 属性="値" />
+<要素 属性 />
+基本的にすべて小文字。でも大文字でも認識はされるらしい
+
+
+■たぶん（勝手に書いてるだけ）
+ブラウザで表示されるときは、上から順に表示されていくだけ。
+で、横幅は最大になる。素のHTMLだけだとほんとに縦に順に要素が並ぶだけ。
+　⇒これはたぶんブラウザのデフォルトCSS？が効いてるからなのかな
+たぶん考えないといけないのは、HTMLでブロックごとに定義して、それをCSSでどう配置するか決める。
+
+
+共通的な属性がある？
+⇒https://www.tohoho-web.com/html/attr/globals.htm
+⇒グローバル属性。どの要素にも指定可能な属性。スクリプトのonXXXXとか、id ,class, data-*(カスタムデータ属性),hidden, ... 他にもあるけど使いそうなのはこれくらいかな
+
+省略可能な要素について
+
+
+■HTML modules
+https://speakerdeck.com/takanorip/10fen-deli-jie-suru-html-modules?slide=8
+javascriptのimport module の機能を利用してHTMLファイルを動的にインポートしてDOM内に差し込んでやろうというやつ。
+もともとはimport html?(linkタグでhtmlを指定する)みたいのがあったみたいだけどいろいろ課題があってやらない方がいいらしい。
+
+■CDNの使い方とかも見たい。
+
+
+■要素について
+ブロック/インライン要素(HTML4.1)
+とりあえず
+ブロック：要素ごとに改行されて表示される
+インライン：改行されない
+
+インライン要素の中にブロック要素は定義不可・逆はOK
+普段使っててよく知ってるものはだいたいインライン要素。
+ブロック：form, div, p
+インライン：文章を弄るようなもの（strong）formの中身(input, button)
+
+
+HTML5ではブロック/インライン要素は廃止されている。ただし概念としては重要なので覚えておくとよい。
+廃止されているとはいえ、ブロック/インラインの改行のあり/なしは仕様としてある。あくまで考え方として意識しなくなるだけ。
+カテゴリとコンテンツモデル(HTML5 : https://www.tohoho-web.com/html/memo/html5.htm#include)
+これがわかりやすい
+https://www.asobou.co.jp/blog/web/html5-3
+https://developer.mozilla.org/ja/docs/Web/Guide/HTML/Content_categories
+
+■主要 7カテゴリ
+メタデータ(meta: 高次の~)
+フロー(body内のページを構成する帆と飲んどの要素)
+セクショニング(section系。)
+ヘッディング(ヘッダ等)
+フレージング(phrasing:表現法.)
+エンベッディッド(embedded:埋め込み)
+インタラクティブ(interactine:対話的)
+
+■その他の分類
+パルパブルコンテンツ (palpable: 明白な)
+
+
+※パルパブルコンテンツ（フローコンテンツやフレージングコンテンツを子要素に持つことができる要素）
+という分け方もある。。sectionの中にh1を入れられるのはこの仕様のため。
+（sectionもh1もパルパブルコンテンツに分類される）
+
+
+■属性の特殊記号について
+画面上に", &とかを表示させたい場合は文字参照の形式にする必要がある。
+https://www.tohoho-web.com/html/char.htm
+つまりこうなる
+' ⇒ &#39;
+" ⇒ &quot;
+& ⇒ &amp;
+< ⇒ &lt;
+> ⇒ &gt;
+
+
+★HTML4.01要素の包容関係　https://www.tohoho-web.com/html/memo/elmtree.htm
+
+■ブラウザのHTML,CSSの解釈モード
+http://www.htmq.com/htmlkihon/302.shtml
+標準モード（Standard）と互換モード（Quirks）があるらしい。
+互換モードはまだCSSが普及していなかった時代の過去のブラウザとの互換のためのもの。
+
+HTML5におけるDOCTYPE宣言は、あまり意味を持たないとされていますが、 DOCTYPE宣言が無いとブラウザのレンダリングモードが、互換モード（Quirks mode）となってしまいます。 ブラウザに標準モード（Standards mode）で解釈させたい場合には、DOCTYPE宣言を記述する必要があります。
+
+■ざっくりHTML5でできるようになったこと
+http://www.htmq.com/html5/002.shtml
+
+sectionとかheaderとかのサンプルはだいたいこんな感じ
+http://www.htmq.com/html5/003.shtml
+
+ドラッグ＆ドロップとかもできるって
+http://www.htmq.com/dnd/
+
+ファイルアップロード系。これくそいいかもな
+https://www.dropzone.dev/
+
+■DTD(Document Type Definition)　※DOCTYPEとかで宣言するやつ
+こんなのもあるよー程度で知っておいた方がいいかも
+https://www.tohoho-web.com/ex/dtd.htm
+
+
+
+
+ブラウザAPIとかいろいろ
+http://www.htmq.com/api/
+クリップボードとかも見れるらしい。。すごい
+
+
+Emmetっていうコーディングの記法みたいのがあるみたい
+コードスニペットとかと考え方は一緒
+https://homupedia.com/emmet-cheat-sheet.html
+
+
+
+TODO
+※tableとかみたいにタグ自体がそれなりにスタイルを持つ（？）ようなものにスタイルってどう当てる？ｄｄ
+※ブラウザでのロードについて調べたい。遅延ロードとか動的ロードとか
+
+
+
+
+
+

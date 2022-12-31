@@ -1,0 +1,453 @@
+/* dummy */
+.sampleHead {
+  background: #333;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sampleHead h1 {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.375;
+  float: left;
+}
+
+body {
+  color: #333333;
+  font-family: sans-serif;
+  /* overflow: hidden; */
+}
+
+#globalNavi {
+  border: solid #cccccc;
+  border-width: 1px 0;
+  padding: 10px 0;
+}
+
+/* 上のナビゲーションリンク */
+#globalNavi ul {
+  margin: 0;
+}
+/* clear fix */
+#globalNavi ul::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#globalNavi li {
+  list-style-type: none;
+  /* Bodyの幅を④等分 */
+  width: 245px;
+  /* ★これでリストの横並びができる */
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.429;
+  border-left: 1px solid #cccccc;
+  padding: 0 10px;
+}
+#globalNavi li a:hover {
+  background-color: #f2f2e5;
+}
+#globalNavi li a.current {
+  background-color: #f2f2e5;
+}
+#globalNavi ul li:first-child {
+  border-left: none;
+}
+
+#globalNavi li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+#page {
+  width: 980px;
+  /* 中央寄せ */
+  /* 左右にautoを指定することで左右のマージンをブラウザが自動で吸収する */
+  margin: 0 auto;
+}
+#pageBody {
+  margin-top: 30px;
+}
+#pageBody::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#pageBodyMain {
+  width: 720px;
+  /* 段組み:左寄せ */
+  float: left;
+}
+#pageBodySub {
+  width: 220px;
+  /* 段組み:右寄せ */
+  float: right;
+}
+
+p {
+  font-size: 14px;
+  /* 単位のない値: この値を要素のフォントサイズに掛けたものを使用する */
+  /* font-size ÷ 文字の高さ = line-heightの指定　が成り立つように */
+  /* ★重要：ブラウザによって表示を統一させたいときはline-heightの指定は必須。（デフォルトだとブラウザごとに結構差がある） */
+  line-height: 1.429;
+}
+#pageBodyMain .pageTitle {
+  font-size: 26px;
+  background-color: #f2f2e5;
+  padding: 5px 15px;
+  line-height: 1.231;
+  margin-top: 0;
+}
+#pageBodyMain .heading-typeA {
+  font-size: 18px;
+  color: #349fa6;
+  border-bottom: 1px solid #349fa6;
+  padding: 5px;
+  line-height: 1.333;
+}
+#pageBodyMain .heading-typeB {
+  font-size: 16px;
+  border-left: 5px solid #e3e4d9;
+  padding-left: 10px;
+  line-height: 1.375;
+}
+
+#pageBodyMain .heading-typeC {
+  font-size: 14px;
+  line-height: 1.429;
+}
+
+#pageBodyMain .articleDetailHead {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+#pageBodyMain .articleDetailFoot {
+  border-top: 1px solid #cccccc;
+  margin-top: 30px;
+  padding-top: 15px;
+}
+#pageBodyMain .articleDetailBody section {
+  margin-top: 30px;
+}
+
+#pageBodyMain .creditUnit {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  line-height: 1.5;
+}
+
+#pageBodyMain .creditUnit p {
+  font-size: 12px;
+}
+
+#pageBodyMain ul li {
+  font-size: 14px;
+  list-style-type: square;
+  line-height: 1.429;
+}
+
+#pageBodyMain .articleDetailBody table {
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-collapse: collapse;
+  width: 100%;
+  line-height: 1.429;
+}
+
+#pageBodyMain .articleDetailBody th,
+#pageBodyMain .articleDetailBody td {
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  text-align: left;
+}
+#pageBodyMain .articleDetailBody th {
+  background-color: #eeeeee;
+}
+
+#pageBodyMain .articleDetailBody caption {
+  text-align: left;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+#pageBodyMain figure {
+  margin: 0;
+}
+
+#pageBodyMain figcaption {
+  font-size: 12px;
+}
+
+#pageHead #siteTitle {
+  font-size: 30px;
+  line-height: 1.2;
+  text-shadow: #349fa6;
+  font-family: "Antic Didone", serif;
+}
+
+#pageHead #catchcopy {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+#copyright small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+#pageFoot {
+  margin-top: 15px;
+  border-top: 1px solid #cccccc;
+  /* floatクリア */
+  clear: both;
+}
+
+#pageBodySub .newsList h2 {
+  font-size: 16px;
+  line-height: 1.375;
+  padding: 5px;
+  margin-top: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+#pageBodySub .newsList ul {
+  padding: 0;
+}
+
+#pageBodySub .newsList li {
+  list-style-type: none;
+  padding: 10px 5px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+#pageBodySub .newsList time {
+  display: block;
+  font-weight: bold;
+}
+
+a {
+  color: #999999;
+}
+
+a:hover {
+  color: #999900;
+}
+
+#otherMakes {
+  margin-bottom: 16px;
+}
+#otherMakes ul {
+  margin-left: 21px;
+}
+
+#otherMakes li {
+  font-size: 14px;
+  line-height: 1.429;
+  list-style-type: square;
+  margin-bottom: 12px;
+}
+/* sanitize.cssを上書き */
+nav li {
+  list-style-type: initial;
+}
+
+.toPageTop {
+  font-size: 12px;
+
+  text-align: right;
+  width: 720px;
+}
+.toPageTop::after {
+  content: "⤴";
+  color: #999999;
+}
+
+.toPageTop a {
+  text-decoration: none;
+}
+
+/* 記事一覧 */
+.articleList {
+  border: 1px solid #cccccc;
+  margin-bottom: 25px;
+}
+
+.articleList a {
+  display: block;
+  padding: 10px;
+}
+
+.articleListText {
+  width: 370px;
+  float: right;
+}
+.articleListText h1 {
+  font-size: 26px;
+  line-height: 1.308;
+}
+
+.articleListText p {
+  font-size: 14px;
+  line-height: 1.429;
+}
+.articleListImage {
+  width: 300px;
+  float: left;
+}
+
+/* 画像の下の余白削除 */
+.articleListImage img {
+  vertical-align: bottom;
+}
+
+/* clear fix TODO: save snippet */
+.articleList a::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.articleList a:hover {
+  opacity: 0.7;
+}
+/* テキストのオーバーフローのテンプレ */
+.text-overflow-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.imageContiner {
+  text-align: center;
+  border-bottom: 1px dotted #cccccc;
+  padding-bottom: 30px;
+  margin: 30px 0;
+}
+
+/* Button for contact form */
+.contactButton {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 240px;
+  height: 50px;
+  text-align: center;
+  background-color: #058ba9;
+  background-image: -webkit-linear-gradient(top, #92cddb, #058ba9);
+  border: 2px solid #058ba9;
+  border-radius: 0.3em;
+  margin: 30px auto 20px;
+  text-shadow: 0px -2px 0 #968484;
+}
+
+.contactButton:hover {
+  opacity: 0.7;
+}
+.contactButton p {
+  display: inline-block;
+  height: 1em;
+  margin-top: 5%;
+}
+.articleDetail .border {
+  border-bottom: 1px solid #cccccc;
+}
+
+/* 配置② */
+.mainVisual {
+  /* 絶対一の基準を変更 */
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.mainVisualText {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 400px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+
+  /* 配置① */
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+}
+
+.mainVisualText h1 {
+  font-size: 26px;
+  line-height: 1.231;
+  margin: 0;
+}
+
+.mainVisualText p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.mainVisual img {
+  vertical-align: bottom;
+}
+
+.portfolioIndex::after {
+  /* crear fix */
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.portfolioIndex article {
+  width: 300px;
+  float: left;
+}
+
+.portfolioIndex article:nth-child(n + 2) {
+  margin-left: 40px;
+}
+
+.portfolioIndex h2 {
+  font-size: 21px;
+  line-height: 1.231;
+  margin: 0;
+  height: 1.3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.portfolioIndex p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+#pageBody .news table {
+  min-width: 100%;
+}
+
+#pageBody .news table th,
+#pageBody .news table td {
+  font-size: 14px;
+  line-height: 1.429;
+  padding: 10px;
+  vertical-align: top;
+}
+
+#pageBody .news table th {
+  white-space: nowrap;
+  padding-right: 30px;
+}
+#pageBody .news table tr {
+  border-bottom: 1px dotted #cccccc;
+}
+#pageBody h2 {
+  padding-bottom: 0;
+}

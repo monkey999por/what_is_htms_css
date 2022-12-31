@@ -1,0 +1,97 @@
+■about selector
+https://www.tohoho-web.com/css/selector.htm#Combinator
+
+https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Selectors
+
+■補足
+HTMLでクラスは複数して可能。
+<div class="c1 c2 c3">
+※class c1,c2,c3をそれぞれ持つという意味。
+
+■ユニバーサルセレクタ　* { ... }
+全要素。適用の優先度はめちゃくちゃ高い
+
+■基本セレクタ
+クラス：.class
+id：#id
+要素：tag
+
+■属性セレクタ　https://developer.mozilla.org/ja/docs/Web/CSS/Attribute_selectors
+[attr]：attrを持つ
+[attr="val"]：attrの値が"val"
+[attr~="val"]：attrの値が、スペースで区切られた値の一つに"val"を持つ
+[attr|="val"]：attrの値が"val"か、"val-*"
+[attr^="val"]：attrの値が"val*" ※valで始まる
+[attr$="val"]：attrの値が"*val" ※valで終わる
+[attr*="val"]：attrの値が"*val*" ※valを含む
+
+※*は任意の文字
+
+★結合子とかCSSの適用範囲　※E, Fには基本セレクタ、属性セレクタが指定可能
+■EF
+  ：一つのHTMLタグ内にEとFを同時に持つ（配下はNG）
+■E, F（" " (空白) 結合子）
+　：EまたはF
+■E F（子孫セレクタ）
+　：E配下のF
+■E > F（子セレクタ）
+　：E直下のF
+■E + F（隣接兄弟セレクタ）
+　：Eと同階層でEの直後にくるF
+■E ~ F（一般兄弟セレクタ）
+　：Eと同階層でE以降にあるF
+
+
+■疑似クラス　https://developer.mozilla.org/ja/docs/Web/CSS/Pseudo-classes
+:hoverとか
+要素の「状態」（※マウスオーバーされたとか、リンクがクリック済みとか）に応じてスタイルを適用
+
+ユーザアクション疑似クラス
+:focus
+
+インプット疑似クラス
+:enable
+:disabled
+:checked
+:valid　:user-valid
+:in-range
+:required
+
+構造疑似クラス
+:nth-child(n)
+:only-child
+
+
+■疑似要素
+::beforeとか
+https://developer.mozilla.org/ja/docs/Web/CSS/Pseudo-elements
+
+::first-line
+::before ::after
+::placeholder
+
+■疑似クラスと疑似要素の違い
+疑似クラスは、HTML要素の特定の状態に対してスタイルを当てることができるものです。
+例えば、:hoverや:activeは、マウスカーソルが上に乗っているときや、
+クリックされているときにスタイルを当てることができる疑似クラスです。
+
+疑似要素は、要素の中にあるものの、HTML上では実際には存在しないものを表します。
+例えば、::beforeや::afterは、HTML要素の前や後にスタイルを当てることができる疑似要素です。
+
+
+結論：
+疑似クラス⇒DOMの状態に対して
+疑似要素　⇒HTMLでは表現されないDOMに対して
+
+■論理コンビネーション
+:has(...)　まだあんまサポートない？firefoxとか
+
+
+
+https://www.tohoho-web.com/ex/centering.html
+
+https://www.tohoho-web.com/wwwcolor.htm
+https://www.tohoho-web.com/ex/font.html
+https://www.tohoho-web.com/bootstrap5/index.html
+https://www.tohoho-web.com/ex/amp.html
+https://www.tohoho-web.com/bootstrap5/components.html

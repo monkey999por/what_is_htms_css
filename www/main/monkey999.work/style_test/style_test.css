@@ -1,0 +1,334 @@
+html {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+/* 
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+} */
+
+/* tag selector */
+h6 {
+  color: red;
+}
+
+/* class selector */
+
+.cool {
+  font-size: 32pt;
+  font-family: Söhne, ui-sans-serif, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+.pretty {
+  color: lime;
+}
+/* .class && .class */
+/* 一つの要素で、どちらのクラスも持っていれば適用される */
+/* 親要素、子要素でそれぞれのクラスを持っている場合は適用されない */
+.cool1.pretty1 {
+  font-size: 30pt;
+  color: blue;
+}
+
+div.test:hover {
+  font-size: 30pt;
+  color: red;
+}
+
+[id*="aaa"]:hover {
+  color: red;
+}
+
+.binding ul li {
+  color: red;
+}
+
+.binding ul ul li {
+  color: blue;
+}
+
+.binding ul ul ul li {
+  color: greenyellow;
+}
+
+.child_selector > div {
+  font-size: 10px;
+}
+
+.sec > p {
+  color: #00ffff;
+}
+h1 ~ div {
+  color: red;
+}
+
+.foot_space {
+  /* border: orangered;
+  background-color: black;
+  border-style: solid;
+  border-radius: 20vw;
+  margin: 20px;
+  max-width: 20vw; */
+}
+.foot_space:empty {
+  background-color: yellowgreen;
+  padding: 5vw;
+  border-radius: initial;
+}
+.beautifull_button {
+  /* color: white;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; */
+}
+beautifull_button:hover {
+  background-color: greenyellow;
+}
+.foot_space .btn,
+.foot_dummy .btn {
+  height: 3em;
+  text-align: center;
+  border: orangered;
+  background-color: black;
+  border-style: solid;
+  border-radius: 20vw;
+  margin: 20px;
+  max-width: 20vw;
+}
+.btn .btn_text {
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+}
+.btn:hover {
+  background-color: olivedrab;
+  translate: 20%;
+  transition-duration: 250ms;
+}
+
+.foot_dummy {
+  padding: 10vw;
+  border: 3px solid black;
+}
+
+#intest:out-of-range {
+  border-color: red;
+}
+
+.c1:nth-child(4) {
+  color: red;
+}
+
+.pesudo_element p::first-line {
+  color: red;
+}
+
+.overflow_test {
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  background-color: blueviolet;
+  overflow: scroll;
+}
+.sizing_item > img {
+  border: 5px solid darkblue;
+}
+.box {
+  border: 5px solid darkblue;
+  width: 300px;
+  margin: 10%;
+  padding: 10%;
+}
+.box {
+  width: 200px;
+}
+.minibox {
+  width: 50px;
+}
+.width {
+  width: 100%;
+}
+.max {
+  max-width: 100%;
+}
+
+.box_2 {
+  border: 3px solid black;
+  /* margin: 10px;
+  padding: 10px; */
+  width: 200px;
+  height: 200px;
+}
+
+.box_2 img {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.box_2 img.cover {
+  object-fit: cover;
+}
+
+.box_2 img.contain {
+  object-fit: fill;
+}
+
+/* .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+}
+
+.wrapper > div {
+  background-color: rebeccapurple;
+  border-radius: 0.5em;
+} */
+
+/* form control */
+.forms {
+  width: 50vw;
+  border: 3px solid black;
+  height: 30vw;
+  border-radius: 3rem;
+  background-color: ghostwhite;
+}
+
+.forms > h2 {
+  color: greenyellow;
+  text-align: center;
+}
+.forms > div > * {
+  /* display: block;
+  margin-right: auto;
+  margin-left: auto; */
+}
+
+.forms label::before {
+  content: "・";
+}
+
+input[type="text"],
+input[type="email"] {
+  border: 2px solid #000;
+  margin: 0 0 1em 0;
+  padding: 2px;
+  width: 80%;
+}
+input[type="submit"] {
+  border: 3px solid #333;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px 2em;
+  font-weight: bold;
+  color: #fff;
+}
+input[type="submit"]:hover {
+  background-color: #333;
+  transition-duration: 250ms;
+}
+
+input[type="submit"]:active {
+  color: red;
+  transition-duration: 0ms;
+}
+
+/* Styling tables */
+.table_sample table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+.table_sample thead th:nth-child(1) {
+  width: 30%;
+}
+.table_sample thead th:nth-child(n + 2) {
+  width: 20%;
+}
+
+.table_sample thead th,
+.table_sample tfoot th {
+  font-family: "Rock Salt", cursive;
+}
+
+.table_sample th {
+  letter-spacing: 2px;
+  border: 1px solid gray;
+}
+
+.table_sample td {
+  letter-spacing: 1px;
+  border: 1px solid gray;
+}
+
+.table_sample tbody td {
+  text-align: center;
+}
+
+.table_sample tfoot th {
+  text-align: right;
+}
+
+.table_sample thead,
+.table_sample tfoot {
+  background: url(leopardskin.jpg);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.table_sample thead th,
+.table_sample tfoot th,
+.table_sample tfoot td {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  border: 3px solid purple;
+}
+
+/* tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+} */
+
+tbody tr {
+  background-image: url(./img/Styling_tables/noise.png);
+}
+
+/* table {
+  background-color: #ff33cc;
+} */
+
+.table_sample caption {
+  font-family: "Rock Salt", cursive;
+  padding: 20px;
+  font-style: italic;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px; /*文字幅*/
+  caption-side: bottom;
+}
+
+.table_sample th,
+.table_sample td {
+  padding: 20px;
+}
+ul,
+body {
+  /* padding: 0;
+  margin: 0; */
+}
+li {
+  max-width: 100%;
+  /* content:  url("./img/star.png");*/
+  /* list-style-image: url("./img/star.png"); */
+  list-style-type: upper-roman;
+}

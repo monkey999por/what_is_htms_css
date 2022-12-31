@@ -1,0 +1,30 @@
+
+■ボックスモデル
+https://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/The_box_model
+
+ブロックボックス(width, height適用、改行あり、padding、margin および borderによって他の要素を押しのける)
+インラインボックス(width, height未適用、改行無し、padding、margin および borderによって他の要素を押しのけない)
+
+displayで変更も可能
+display: block; ※ブロックボックスに変更
+display: inline;　※インラインボックスに変更
+display: inline-block;　　※width, height適用、改行"""なし"""、padding、margin および borderによって他の要素を押しのける
+※最近は2値構文なるものもあるらしい。例えばblockはblock flow。blockだけの場合はブラウザがでふぉるとでflowを付与するとか。
+https://developer.mozilla.org/ja/docs/Web/CSS/display
+
+ボックスのwidth,heightを設定しても、実際のwidth,heightは
+content(一番中身) + padding + border + merginの合計のサイズになる
+※つまりwidth: 200としても、200になるのはcontentのwidthで、実際の表示はpadding + border + merginのwidthも加味される
+⇒これを回避する開発手法もあるらしい
+　.box {
+  　box-sizing: border-box;
+　}
+詳細はhttps://developer.mozilla.org/ja/docs/Learn/CSS/Building_blocks/The_box_model#css_%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E4%BB%A3%E6%9B%BF
+ ⇒多分これ読むのが一番わかる
+ 　https://developer.mozilla.org/ja/docs/Web/CSS/box-sizing
+
+★マージンの相殺
+二つの要素でマージンが重なった場合、合計ではなく大きい方のマージンが優先される
+
+これが分かりやすかった。
+https://www.youtube.com/watch?v=z582Z6dENGA&t=537s
