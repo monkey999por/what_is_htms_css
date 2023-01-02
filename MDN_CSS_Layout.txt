@@ -1,6 +1,4 @@
 ■CSS レイアウト https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout
-
-
 ★位置指定(position)https://developer.mozilla.org/ja/docs/Web/CSS/position
 ・position: relative; 元の位置に対して相対的（top,right,left,bottomで指定）
 ・position: absolute;　ビューポート（基本的にbody）に対して「相対」的。直近の親要素にposition: relativeを指定すると直近の親要素に対して「相対」的
@@ -27,8 +25,10 @@ TODO: ■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layo
 ・grid-column 
 ・grid-row 
 
-TODO: ■フロート　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats
-
+TODO: ■フロート(浮く)　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats
+・仕組み　一番最初に見るべきくそ分かりやすい⇒https://www.youtube.com/watch?v=uRdGpA2jgWw
+                                          もし消えてたら⇒"C:\develop\WHAT_IS\y2mate.com - 第18回CSSのfloatの仕組み実践プログラミング講座_480p.mp4"
+・
 
 
 TODO: ■位置指定　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Positioning
