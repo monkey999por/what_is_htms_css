@@ -1,13 +1,7 @@
 ■CSS レイアウト https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout
-★位置指定(position)https://developer.mozilla.org/ja/docs/Web/CSS/position
-・position: relative; 元の位置に対して相対的（top,right,left,bottomで指定）
-・position: absolute;　ビューポート（基本的にbody）に対して「相対」的。直近の親要素にposition: relativeを指定すると直近の親要素に対して「相対」的
-・position: fixed; ビューポート（基本的にbody）に対して相対的。スクロールでも位置が変わらない
-・position: sticky; スクロール途中で位置固定とかできる
 
 ■通常フロー　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Normal_Flow
 デフォルトでは、ブロックレベル要素のコンテンツは、その親要素の幅の 100% で、そのコンテンツと同じ高さです インライン要素は、コンテンツと同じ高さで、コンテンツと同じ幅です。インライン要素に幅や高さを設定することはできません — それらはブロックレベル要素のコンテンツの中にあるだけです。この方法でインライン要素のサイズを制御したい場合は、display: block; を使用してブロックレベル要素のようにふるまうように設定する必要があります (あるいは、display: inline-block; で、両方の特性を混在させます)。
-
 
 TODO: ■フレックスボックス https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Flexbox
 ★Flex(一次元:縦or横)
@@ -25,15 +19,42 @@ TODO: ■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layo
 ・grid-column 
 ・grid-row 
 
-TODO: ■フロート(浮く)　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats
+■フロート(浮く)　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats
 ・仕組み　一番最初に見るべきくそ分かりやすい⇒https://www.youtube.com/watch?v=uRdGpA2jgWw
                                           もし消えてたら⇒"C:\develop\WHAT_IS\y2mate.com - 第18回CSSのfloatの仕組み実践プログラミング講座_480p.mp4"
-・
+・ブロック要素でfloat指定するときはwidth設定しないといけない。（ブロックは基本的に横いっぱいに広がるため）
+・float: left; ※leftのfloatを解除
+・clear: both; ※left, right両方
+・crearfix ※こういう名前のテクニック
+　float指定した要素のafterに空のブロック追加して以降の要素のfloat回り込みを解除するやり方
+  1. floatを指定して要素を横並べ
+  .target {
+    float; left;
+  }
+  2. crearfix
+  .target::after {
+    /* crear fix */
+    content: "";
+    display: block;
+    clear: both;
+  }
+・display: flow-root
+　⇒浮動要素の親内に浮動要素を入れる（親要素のサイズをfloat指定した要素のサイズを包むようにする）
 
+■位置指定　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Positioning
+・position: relative; 元の位置に対して相対的（top,right,left,bottomで指定）
+・position: absolute;　ビューポート（基本的にbody）に対して「相対」的。直近の親要素にposition: relativeを指定すると直近の親要素に対して「相対」的
+・position: fixed; ビューポート（基本的にbody）に対して相対的。スクロールでも位置が変わらない
+・position: sticky; スクロール途中で位置固定とかできる
+　⇒これ分かりやすい　https://www.youtube.com/watch?v=JOGkW9a_HoQ
+　　こうすれば画面の一番上で止まる
+    position: sticky;
+    top 0;
+　
 
-TODO: ■位置指定　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Positioning
+■段組みレイアウト　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Multiple-column_Layout
+・⇒ここみるのがいいとおもう。　/monkey999.work/style_test/layout/multiple-column/layout.html
 
-TODO: ■段組みレイアウト　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Multiple-column_Layout
 
 ■レスポンシブデザイン　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Responsive_Design
 ★いろんな手法がある
