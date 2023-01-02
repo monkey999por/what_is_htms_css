@@ -10,7 +10,10 @@ TODO: ■フレックスボックス https://developer.mozilla.org/ja/docs/Learn
 ・flex-wrap: wrap; 
 flex-flow: row wrap; flex-directionとflex-wrapのショートハンド
 ・align-items: flex-end, center ⇒flexboxの位置
-・。。。。
+・
+flex itemになるのは直下のみ
+https://flexboxfroggy.com/#ja
+
 
 TODO: ■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Grids
 ★Box(二次元:縦横)
@@ -84,5 +87,3 @@ TODO: ■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layo
 
 ■過去のレイアウト方法　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
 ・あとで暇があったら
-
-■
