@@ -129,8 +129,6 @@ document.addEventListener(
      */
     if (!isRoot()) {
       const topicPath = document.querySelector(".topicPath");
-      // TODO: auto create link
-      const linkContent = "";
       let breadcrumbStr = "";
 
       const crumbLists = getPageInfo().breadcrumb;

@@ -104,9 +104,6 @@ https://www.dropzone.dev/
 こんなのもあるよー程度で知っておいた方がいいかも
 https://www.tohoho-web.com/ex/dtd.htm
 
-
-
-
 ブラウザAPIとかいろいろ
 http://www.htmq.com/api/
 クリップボードとかも見れるらしい。。すごい
@@ -116,11 +113,6 @@ Emmetっていうコーディングの記法みたいのがあるみたい
 コードスニペットとかと考え方は一緒
 https://homupedia.com/emmet-cheat-sheet.html
 
-
-
-TODO
-※tableとかみたいにタグ自体がそれなりにスタイルを持つ（？）ようなものにスタイルってどう当てる？ｄｄ
-※ブラウザでのロードについて調べたい。遅延ロードとか動的ロードとか
 
 
 

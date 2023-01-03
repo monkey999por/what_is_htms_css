@@ -1,0 +1,70 @@
+/* Flex */
+/* ※これは説明のためにいろいろプロパティ書いてるだけなのでちゃんと動くものではない */
+.flex_container {
+  display: flex;
+
+  /* flexの軸方向 row(defaul) or column */
+  flex-direction: row;
+
+  /* 一行におさまらなかった時のふるまい */
+  /* wrap: 折り返す */
+  /* wrap-reverse: 折り返す（コンテンツの順序は逆） */
+  flex-wrap: wrap;
+
+  /* flex-directionとflex-wrapのショートハンド */
+  flex-flow: column wrap-reverse;
+
+  /* 軸方向の配置方法 */
+  justify-content: space-around;
+
+  /* 直角方向の配置方法(アイテム全体としての配置) */
+  align-items: center;
+
+  /* flexアイテムの配置方法（アイテム間） */
+  /* align-content: flex-start; */
+}
+
+.flex_item1 {
+  align-self: flex-end;
+  flex-grow: 1;
+}
+
+.flex_item2 {
+  align-self: flex-start;
+  /* http://www.htmq.com/css/flex-grow.shtml */
+  flex-grow: 2;
+
+  /* flex itemの順番の優先度 */
+  order: 1;
+}
+
+/* grid */
+
+/* ----------------------------dummy layout-------------------------------- */
+
+h1 {
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+.fc_text {
+  /* position: absolute;
+  top: 50%;
+  left: 40%; */
+  z-index: -1;
+}
+
+.flex,
+.grid {
+  border: 1px solid black;
+  margin-bottom: 30px;
+  background-color: rgba(50, 130, 157, 0.7);
+}
+
+.flex_container > div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+  background-color: whitesmoke;
+}

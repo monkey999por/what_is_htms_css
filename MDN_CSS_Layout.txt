@@ -3,24 +3,46 @@
 ■通常フロー　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Normal_Flow
 デフォルトでは、ブロックレベル要素のコンテンツは、その親要素の幅の 100% で、そのコンテンツと同じ高さです インライン要素は、コンテンツと同じ高さで、コンテンツと同じ幅です。インライン要素に幅や高さを設定することはできません — それらはブロックレベル要素のコンテンツの中にあるだけです。この方法でインライン要素のサイズを制御したい場合は、display: block; を使用してブロックレベル要素のようにふるまうように設定する必要があります (あるいは、display: inline-block; で、両方の特性を混在させます)。
 
-TODO: ■フレックスボックス https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Flexbox
+■フレックスボックス https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Flexbox
+・最初にこれやるのが分かりやすい　https://flexboxfroggy.com/#ja
 ★Flex(一次元:縦or横)
 ・display: flex;  親要素に指定することで配下の要素をflexitemとして扱える
 ・flex-direction: column, row ⇒ flexboxの要素の方向
 ・flex-wrap: wrap; 
 flex-flow: row wrap; flex-directionとflex-wrapのショートハンド
 ・align-items: flex-end, center ⇒flexboxの位置
-・
-flex itemになるのは直下のみ
-https://flexboxfroggy.com/#ja
+★flex itemになるのは直下のみ
+★基本的な考え方は、flex-containerにいろいろ指定して中のアイテムを制御するイメージ
+C:\develop\WHAT_IS\what_is_htms_css\www\main\monkey999.work\flex_grid\flex_grid.css
 
 
-TODO: ■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Grids
+
+■グリッド　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Grids
+・最初にこれやるのが分かりやすいhttps://codepip.com/games/grid-garden/#ja
 ★Box(二次元:縦横)
-・grid-template-rows 
-・grid-template-columns
-・grid-column 
-・grid-row 
+
+※conteinerに指定
+１．グリッドを定義
+・grid-template-rows : 20% 20em 50px; ※いろんな単位もつかる
+・grid-template-columns:1fr 1fr 1fr; ※ repeat(3, 1fr);でも同じ
+・grid-template:  20% 20em 50px / 1fr 1fr 1fr ↑二つのショートハンド
+
+
+※アイテムに指定
+２．カラム方向のサイズ定義
+・grid-column-end: 1;
+・grid-column-start: 3;
+・grid-column: 1 / 3; ↑二つのショートハンド
+
+３．行方向のサイズ定義
+・grid-column-end: 1;
+・grid-column-start: 3;
+・grid-row :1 / 3;↑二つのショートハンド
+
+※grid-columnとgrid-rowのショートハンド
+grid-area:  1 / 1 / 3 / 3;
+
+
 
 ■フロート(浮く)　https://developer.mozilla.org/ja/docs/Learn/CSS/CSS_layout/Floats
 ・仕組み　一番最初に見るべきくそ分かりやすい⇒https://www.youtube.com/watch?v=uRdGpA2jgWw
