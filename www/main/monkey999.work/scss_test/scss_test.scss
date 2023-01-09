@@ -1,12 +1,66 @@
 @charset 'UTF-8';
 
+th {
+  border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;
+}
+td {
+  border:1px solid #000000;text-align:center;
+  border-collapse: collapse;
+}
+ul {
+  + li {
+    list-style-type: none;
+  }
+  a {
+    color: black;
+  }
+
+}
+
+ul + {
+  li {
+   list-style-type: none;
+ }
+}
+
+
+
+
+
+
+
+
+
+h2 {
+  + p {
+    border-top: 1px solid gray;
+  }
+}
+ul { ~ {li {border-top: 1px solid gray;}}}
+
+p {
+  ~ {
+    span {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 
 $pc: 1024px; // PC
 $tab: 680px; // タブレット
 $sp: 480px; // スマホ
 
 @mixin pc {
-  @media screen and (max-width: ($pc)) {
+  @media screen and (min-width: ($pc)) {
     @content;
   }
 }

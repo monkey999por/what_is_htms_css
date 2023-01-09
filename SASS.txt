@@ -1,0 +1,53 @@
+https://sass-lang.com/documentation/syntax
+
+■Syntax
+⇒構文解析とか（定義可能場所とか）
+　⇒でもOverview的な感じ、そんなに見なくてもいいかも
+■Style Rules
+〇ネストのルール（https://sass-lang.com/documentation/style-rules#selector-lists）
+　※※大事：ネストが深くなるとコンパイルされたCSSの一つのCSS定義内のセレクタ指定が多くなる。
+　　　　　　ブラウザのレンダリングはセレクタ数が多いと極端に遅くなる（セレクタを右から解析するため）ので、ネストを深くしないようにする。
+　　　　　　最大で3ネストまで位が良さげ。可読性の観点的にも。
+　★ネストルール(SCSS ⇒ CSS)
+  ■E {F {}} ⇒ E F{}　※通常のネスト：子孫セレクタになる
+  ■.A, .B {.C, .D {}} ⇒ .A .C, .A .D, .B .C, .B .D {} ※セレクタリスト　⇒組み合わせのセレクタリストになる
+  ■セレクタコンビネータ（どの書き方も出力は同じ）
+  　E > { F {}}    ⇒ E > F {}
+  　E { + F {}}    ⇒ E + F {}
+  　E { ~ {F {}}}  ⇒ E ~ F {}
+　
+　・ショートハンド的なネスト
+　　https://sass-lang.com/documentation/style-rules/declarations#nesting
+
+〇親セレクタ &を使用して親セレクタ参照
+　E {&hover {}} ⇒ E:hover {}
+　E {F & {}}    ⇒ F E {}
+　E {:not(&)}   ⇒ :not(E){}
+　こんなテクニックもある クラス名の生成
+  .class {&_test {}} ⇒ .class_test {}
+
+
+
+・
+■Variables
+■@Rules
+■Values
+■Operators
+■Built-in Modules
+■Braeking Change
+・演算子
+　例えば「$size: 10px; margin: 15px -$size;」
+　⇒margin: 15px -10pxなのかmargin 5pxなのかどっち？問題
+　　⇒演算子として有効：15px - $size
+　　⇒演算子として有効：15px-$size
+　　⇒演算子として無効：15px -$size
+・Gridで使用するスラッシュと、SASSの除算が同じスラッシュを使っている問題
+ https://sass-lang.com/documentation/breaking-changes/slash-div
+ ⇒SASSはCSSのスーパーセットなので、Gridではスラッシュを使う
+ 　※代わりにlist.slash()を使うこともできる
+ ⇒除算はmath.div()を使う。
+■Command Line
+https://sass-lang.com/documentation/cli/dart-sass
+■Javascript API
+　⇒ライブラリ作成者向けっぽい
+
