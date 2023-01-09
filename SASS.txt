@@ -15,25 +15,59 @@ https://sass-lang.com/documentation/syntax
   　E > { F {}}    ⇒ E > F {}
   　E { + F {}}    ⇒ E + F {}
   　E { ~ {F {}}}  ⇒ E ~ F {}
-　
+
 　・ショートハンド的なネスト
 　　https://sass-lang.com/documentation/style-rules/declarations#nesting
 
-〇親セレクタ &を使用して親セレクタ参照
-　E {&hover {}} ⇒ E:hover {}
-　E {F & {}}    ⇒ F E {}
+〇親セレクタ(&) &を使用して親セレクタ参照
+　E {&:hover {}} ⇒ E:hover {}
+　E {F & {}}    ⇒ F E {}  ※右側に親を持ってくるテクニック
 　E {:not(&)}   ⇒ :not(E){}
 　こんなテクニックもある クラス名の生成
   .class {&_test {}} ⇒ .class_test {}
 
-
-
-・
+〇プレースホルダーセレクタ(%と@extend)
+  CSSには出力されない定義。@extendで継承させるためだけの定義的な。
+  https://kaminarimagazine.com/web/2016/09/30/sass-%E3%83%97%E3%83%AC%E3%83%BC%E3%82%B9%E3%83%9B%E3%83%AB%E3%83%80%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%8A%E3%81%86%EF%BC%81/
+  
 ■Variables
+・定義
+$variable: 12px
+※注意：ハイフンとアンダースコアを同等とみなす。つまり
+定義　$val_a: #111;
+呼び出し　$val_a ※#111
+呼び出し　$val-a ※#111
+
+・有効範囲
+トップレベルで定義：グローバル
+ブロック内で定義：そのブロック内でのみ有効
+
+■Interpolation（補完：※変数埋め込み的な）　https://sass-lang.com/documentation/interpolation
+　#{$var}
+
 ■@Rules
+TODO
+
 ■Values
+値は基本的に通常のCSSと同じ型を使用する。
+SASS固有でよく使いそうなものはこんな感じ
+・list: 以下の二つは同じ意味。実際に 使うときは@eachとかで使う。Immutable(定義後に変更不可)
+  (val, val, val)、(val val val)
+・map: Immutable(定義後に変更不可)　これ自体は有効なCSSではないので、ふつうは@forとかで展開して使う。
+  ("regular": 400, "medium": 500, "bold": 700);
+  ※キーはダブルクォーテーションで囲うことを推奨。
+・true false ※@ifとかif()で使う
+・null ※主に関数の戻り値で使う。nullの場合はCSSは未定義となる。
+・
 ■Operators
+これ見るのがいい、結構簡潔にまとまってる
+結構複雑だからそもそも計算処理とかはあんまりやらない方がいいのではという所感
+割り算は / ではなく math.div()を使う。
+https://sass-lang.com/documentation/operators
+
 ■Built-in Modules
+いったん使わないかも、、ここまで複雑なことをする必要がある状況がいまいち分からない。
+
 ■Braeking Change
 ・演算子
 　例えば「$size: 10px; margin: 15px -$size;」

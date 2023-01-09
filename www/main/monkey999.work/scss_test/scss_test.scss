@@ -17,9 +17,12 @@ ul {
 
 }
 
+$test_bal: #111;
+$test-hi: #222;
 ul + {
   li {
    list-style-type: none;
+color: $test-bal;
  }
 }
 
