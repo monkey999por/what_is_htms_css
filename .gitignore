@@ -9,3 +9,9 @@ www/.yarn/*
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+
+# SASS
+.
+**/.sass-cache/*
+**/scss_test/*.css
+**/scss_test/*.css.map
