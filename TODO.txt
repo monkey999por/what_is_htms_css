@@ -4,10 +4,23 @@
    値にinitialを指定してCSSをresetする。
 ※ブラウザでのロードについて調べたい。遅延ロードとか動的ロードとか
 
-ローディングつけたい
+アニメーション
+https://www.webdesignleaves.com/pr/html/svg_animation.html
+https://www.tohoho-web.com/css/prop/transition.htm
+animation-timing-function
+
+https://www.youtube.com/watch?v=Q2AmBEXhG8U&list=LL&index=1
+three.js 
+https://sketchfab.com/
 
 
 ■CSS
 ベンダープレフィックス
 　⇒先頭に付ける-moz-や-webkit-など、CSS3で採用される予定の機能が各ブラウザで先行実装のもの（要するに正式版じゃないけど各ブラウザが実装済みのもの）につく。
 　　-webkitはchrome、-mozはfirefox
+
+■SASS
+公式のドキュメントまとめてくれてる
+読み順とかも整理してくれてるので結構わかりやすい
+さらっと見ておくべし
+https://www.webdesignleaves.com/pr/css/css_basic_08.html

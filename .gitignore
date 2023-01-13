@@ -14,4 +14,4 @@ www/.yarn/*
 .
 **/.sass-cache/*
 **/scss_test/*.css
-**/scss_test/*.css.map
+**/scss_test/*css.map

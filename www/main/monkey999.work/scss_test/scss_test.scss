@@ -1,10 +1,16 @@
 @charset 'UTF-8';
-
+@use "./scsspartial";
 th {
-  border:1px solid #000000;background-color:#808080;color:#FFFFFF;text-align:center;
+  border: 1px solid #000000;
+  background-color: #808080;
+  color: #ffffff;
+  text-align: center;
+  // パーシャルファイルから変数読み込み
+  margin-top: scsspartial.$partial_val;
 }
 td {
-  border:1px solid #000000;text-align:center;
+  border: 1px solid #000000;
+  text-align: center;
   border-collapse: collapse;
 }
 ul {
@@ -13,33 +19,32 @@ ul {
   }
   a {
     color: black;
+    @debug "divider offset:a";
   }
-
 }
 
 $test_bal: #111;
 $test-hi: #222;
 ul + {
   li {
-   list-style-type: none;
-color: $test-bal;
- }
+    list-style-type: none;
+    color: $test-bal;
+    border-width: 100px + 50;
+  }
 }
-
-
-
-
-
-
-
-
 
 h2 {
   + p {
     border-top: 1px solid gray;
   }
 }
-ul { ~ {li {border-top: 1px solid gray;}}}
+ul {
+  ~ {
+    li {
+      border-top: 1px solid gray;
+    }
+  }
+}
 
 p {
   ~ {
@@ -48,15 +53,6 @@ p {
     }
   }
 }
-
-
-
-
-
-
-
-
-
 
 $pc: 1024px; // PC
 $tab: 680px; // タブレット

@@ -1,0 +1,7 @@
+$partial_val: 12px;
+.partial {
+  color: red;
+  &:hover {
+    background-color: blue;
+  }
+}

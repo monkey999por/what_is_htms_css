@@ -1,4 +1,23 @@
+
+-----------------------------------------------
+■ドキュメント
 https://sass-lang.com/documentation/syntax
+https://github.com/sass/sass
+
+■本体
+https://github.com/sass/dart-sass
+
+★コンパイルされるもの、されないもの
+⇒明記はされていなかったけど、たぶんSCSSの
+　・$var　⇒される
+　・function()　⇒される(実行結果が出力)
+　　⇒新しめのSASSからは
+　・通常のCSSの関数的な書き方（rotate3d()とか。関数ではない？ちょっとわからん）はそのまま出力される。
+
+★インストール時の注意
+・Dart-sassはChocorateyを使ってインストールする。
+　gemでインストールするとRuby sassが入ってた・・
+　どのsassが入ってるかはバージョンの確認と、サポートされているものの有無で試しながら確認すればよい？
 
 ■Syntax
 ⇒構文解析とか（定義可能場所とか）
@@ -18,6 +37,11 @@ https://sass-lang.com/documentation/syntax
 
 　・ショートハンド的なネスト
 　　https://sass-lang.com/documentation/style-rules/declarations#nesting
+　　margin {
+      top: 10px;
+      bottom: 10px
+    }
+    みたいな書き方
 
 〇親セレクタ(&) &を使用して親セレクタ参照
 　E {&:hover {}} ⇒ E:hover {}
@@ -45,8 +69,31 @@ $variable: 12px
 ■Interpolation（補完：※変数埋め込み的な）　https://sass-lang.com/documentation/interpolation
 　#{$var}
 
-■@Rules
-TODO
+■@Rules（https://sass-lang.com/documentation/at-rules） TODO: 一通り見る
+〇補足 - CSS自体の特定の@rulesを、SASSでは以下のようにコンパイルする（https://sass-lang.com/documentation/at-rules/css#media）
+　・@media: CSSでは@ruleはトップレベルにしか書けない。SASSの@mediaのみ特殊で、ネストされたブロック内にも書ける
+　　　　　　⇒コンパイル結果はリンク先参照（一言で言うと子セレクタで指定した@mediaは親セレクタを囲うようにしてコンパイルされる）
+　・@supports: これもブロックレベル内に定義するとコンパイル結果がいろいろする
+@use 変数,mixin,functionのロード
+
+@forword
+@import
+@mixin and @inclued
+@function
+@extend
+@error
+　FW開発、チーム開発用。コンパイル時にエラーを出し、中断する。
+@warn
+　FW開発、チーム開発用。コンパイル時に警告を出す。
+@debug
+　デバッグログを出力
+@at-root
+　ルール内のすべてがルートに出力される。
+---Flow Control----
+@if and @else
+@each
+@for
+@while
 
 ■Values
 値は基本的に通常のCSSと同じ型を使用する。
@@ -58,15 +105,28 @@ SASS固有でよく使いそうなものはこんな感じ
   ※キーはダブルクォーテーションで囲うことを推奨。
 ・true false ※@ifとかif()で使う
 ・null ※主に関数の戻り値で使う。nullの場合はCSSは未定義となる。
-・
+
+※SASS固有の値は、CSSの有効な値ではない。関数等の処理用に使う目的。
+
 ■Operators
 これ見るのがいい、結構簡潔にまとまってる
 結構複雑だからそもそも計算処理とかはあんまりやらない方がいいのではという所感
-割り算は / ではなく math.div()を使う。
+★上手く使えばもっと柔軟なレスポンシブができる？
+　⇒できなさそう？演算子自体がCSSのプロパティではないため、CSSには計算後の値が出力される。
+割り算は / ではなく math.div()を使う。※Gridの / とステートメントがバッティングするため。
 https://sass-lang.com/documentation/operators
 
 ■Built-in Modules
-いったん使わないかも、、ここまで複雑なことをする必要がある状況がいまいち分からない。
+@use "sass:map"とかでインポートして使う
+ざっと見て使いそうなのは
+list.slash($elements...)　※grid-template定義するときに。。
+map.get($map, $key, $keys...)
+★math系は上手く使えば画面サイズによっていろいろ切り替えとかできるかも？わかんないけど
+selector系もうまく使えれば結構いろいろできそう
+selector.append($selectors...)
+selector.nest($selectors...)
+
+
 
 ■Braeking Change
 ・演算子
@@ -82,6 +142,12 @@ https://sass-lang.com/documentation/operators
  ⇒除算はmath.div()を使う。
 ■Command Line
 https://sass-lang.com/documentation/cli/dart-sass
+ひとまず使いそうなのは
+-w --watch　※ファイルの変更の監視
+--poll　　　※ポーリング（ループ？）で監視　ファイル保存アクションがSASSに通知されない（=--watchが使えない）みたいなときはこっち使う。
+くらい
+–stop-on-error
+--trace
 ■Javascript API
 　⇒ライブラリ作成者向けっぽい
 
