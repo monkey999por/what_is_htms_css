@@ -100,12 +100,12 @@ $variable: 12px
 @import（CSSにも同じものある。SASSはそれを拡張してる）
 ・deplicate
 
-@mixin and @inclued
-・書式：@mixin <name> { ... }　または　mixin name(<arguments...>) { ... }　で定義して @inclued <name> または　@inclued <name>(<arguments...)で使用
+@mixin and @include
+・書式：@mixin <name> { ... }　または　mixin name(<arguments...>) { ... }　で定義して @include <name> または　@include <name>(<arguments...)で使用
 ・@mixin replace-text($image, $x: 50%, $y: 50%)みたいに引数を定義すればデフォルト引数になる。
 ・ @include square(100px, $y: 4px);みたいに名前指定で引数を渡せる
 ・@mixin order($height, $selectors...)で可変長引数になる。可変長の部分はSASSのlist型になる。
-・コンテンツブロック　@mixinの中で@contentとすると@inclued時にSCSSのブロックを渡せる
+・コンテンツブロック　@mixinの中で@contentとすると@include時にSCSSのブロックを渡せる
 ・※注意：コンテンツブロック内で変数を参照する場合は、@include <name> using (<arguments...>)
 
 @function
@@ -155,7 +155,10 @@ $variable: 12px
 　　　⇒@for $i from 1 to 4 { } // 1 ~ 4
 
 @while
-
+・@while <expression> { ... }
+・<expression>: true or false
+・※基本的に@forか@eachを使用することが推奨されている
+・
 
 
 ■Values
