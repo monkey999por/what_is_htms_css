@@ -1,6 +1,72 @@
 @charset 'UTF-8';
 @use "./scsspartial";
+@use "./scssLibB" as B;
+@use "./scssLibA" as A;
+
+@debug A.$libval; // 10
+@debug B.$libval; // 20
+
+//! comment 一行コメントはコンパイルされると消える。
+/* 複数行コメントは残る */
+$list: (1, 2, 3, 4);
+// かっこはなくてもいい
+$list2: 1, 2, 3, 4;
+// 空白もOK
+$list3: 1 2 3 4 5;
+
+@each $item in $list3 {
+  @debug $item;
+}
+
+// 二次元配列
+// 空白とカンマを交互に使用
+$icons: "eye" "\f112"12px, "start" "\f12e"16px, "stop" "\f12f"10px;
+// こっちの方がわかりやすい
+$icons2: ((1a, 2b, 3c), (4a, 5b, 6c), (7, 8, 9));
+
+@each $i in $icons2 {
+  @each $k in $i {
+    @debug $k;
+  }
+}
+
+// for
+@for $i from 1 through 4 {
+  @debug $i; // 1 ~ 4
+}
+
+@for $i from 1 to 4 {
+  @debug $i; // 1 ~ 3
+}
+
+%extest {
+  color: rgb(1, 1, 1);
+}
+.hello {
+  background-color: black;
+  @extend %extest;
+}
+$test: 1;
+$test: "12" !default;
+
+@mixin media($types...) {
+  @each $type in $types {
+    @media #{$type} {
+      @content ($type);
+    }
+  }
+}
+
+@include media(screen, print) using ($usingVal) {
+  h1 {
+    font-size: 40px;
+    @if $usingVal == print {
+      font-family: Calluna;
+    }
+  }
+}
 th {
+  margin: #{$test}px;
   border: 1px solid #000000;
   background-color: #808080;
   color: #ffffff;
