@@ -6,6 +6,19 @@
 @debug A.$libval; // 10
 @debug B.$libval; // 20
 
+@debug amptest;
+@each $key, $val in (test: 1, a: 2, bbb: 3) {
+  @debug $key;
+  @debug $val;
+}
+$name: (
+  key: 1,
+  key2: d,
+);
+@each $key, $val in $name {
+  @debug #{$key}_#{$val};
+}
+
 //! comment 一行コメントはコンパイルされると消える。
 /* 複数行コメントは残る */
 $list: (1, 2, 3, 4);
@@ -30,14 +43,22 @@ $icons2: ((1a, 2b, 3c), (4a, 5b, 6c), (7, 8, 9));
   }
 }
 
-// for
+// throughの場合は最後のindexを含む
 @for $i from 1 through 4 {
   @debug $i; // 1 ~ 4
 }
 
+// toの場合は最後のindexを含まない
 @for $i from 1 to 4 {
   @debug $i; // 1 ~ 3
 }
+
+// 開始値 よりも 終了値 の方が小さい場合は、変数 の値は 1 つずつデクリメントされていきます。
+@for $i from 4 to 1 {
+  @debug dec_#{$i}; // 4 ~ 2
+}
+
+//
 
 %extest {
   color: rgb(1, 1, 1);

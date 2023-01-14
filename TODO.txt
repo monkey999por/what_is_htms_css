@@ -24,14 +24,3 @@ https://sketchfab.com/
 読み順とかも整理してくれてるので結構わかりやすい
 さらっと見ておくべし
 https://www.webdesignleaves.com/pr/css/css_basic_08.html
-
-
-
-■スニペット定義
-@ruleのflow以下
-
-〇Valuessett
-×Operatores
-〇Built in modules
-×Breaking changes
-×Commandline　

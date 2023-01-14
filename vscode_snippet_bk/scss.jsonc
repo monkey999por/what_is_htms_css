@@ -1,0 +1,172 @@
+{
+  // Place your snippets for scss here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+
+  // SASS基本機能（主に記法のsnippet）
+  "comment(do output css)": {
+    "prefix": "comment",
+    "body": ["/* $1 */"],
+    "description": "cssに出力されるコメント"
+  },
+  "documentation comment ": {
+    "prefix": "comment(doc)",
+    "body": [
+      "/// $overview.",
+      "///",
+      "/// @param {number} \\$base",
+      "///   description.",
+      "/// @return {number} `$base` to the power of `\\$exponent`."
+    ],
+    "description": [
+      "コメント内のテキストをMarkdownとして解釈される。\n",
+      "使用場所: mixins, functions, variables, and placeholder selectors"
+    ]
+  },
+  "Loads mixins, functions, and variables from other Sass stylesheets": {
+    "prefix": ["@use"],
+    "body": ["@use \"${1:<url>}\""],
+    "description": [""]
+  },
+  "@forward": {
+    "prefix": ["@forward"],
+    "body": ["@forward \"${1:<url>}\""],
+    "description": [
+      "loads a Sass stylesheet and makes its mixins, functions, and variables available when your stylesheet is loaded with the @use rule."
+    ]
+  },
+  "@forward(with prefix)": {
+    "prefix": ["@forward"],
+    "body": ["@forward \"${1:<url>}\" as ${2:prefix}-*"],
+    "description": [
+      "loads a Sass stylesheet and makes its mixins, functions, and variables available when your stylesheet is loaded with the @use rule."
+    ]
+  },
+  "@forward(with Visibility)": {
+    "prefix": ["@forward"],
+    "body": ["@forward \"${1:<url>}\" ${2|hide,show|} ${3:<members...>}"],
+    "description": [
+      "loads a Sass stylesheet and makes its mixins, functions, and variables available when your stylesheet is loaded with the @use rule."
+    ]
+  },
+  "define @mixin": {
+    "prefix": ["@mixin"],
+    "body": ["@mixin ${1:mixin-name}${2:(\\$args)} { ${3:@content} }"],
+    "description": [
+      "A mixin’s name can be any Sass identifier, and it can contain any statement other than top-level statements. "
+    ]
+  },
+  "use mixin rule": {
+    "prefix": ["@include"],
+    "body": ["@include ${1:mixin-name}${2:(\\$args)};"],
+    "description": ["use @mixin"]
+  },
+  "use mixin rule(@content with argument)": {
+    "prefix": ["@include"],
+    "body": [
+      "@include ${1:mixin-name}(${2:\\$args}) using (${3:\\$type}) {${4:<content>}}"
+    ],
+    "description": ["use @mixin"]
+  },
+  "define sass script": {
+    "prefix": ["@function"],
+    "body": [
+      "@function ${1:function-name}(${2:\\$arg} , ${3:\\$arg-with-default: 100%} , ${4:\\$variadic-arg}...) { $5 }"
+    ],
+    "description": [""]
+  },
+  "@extend": {
+    "prefix": ["@extend"],
+    "body": ["@extend ${1:<selector>};"],
+    "description": [""]
+  },
+  "debug sass compile with @debug or @error or @warn": {
+    "prefix": ["@debug", "@warn", "@error"],
+    "body": ["${1|@debug,@warn,@error|} ${2:output}"],
+    "description": [""]
+  },
+  "ルール内のすべてがドキュメントのルートに出力": {
+    "prefix": ["@at-root"],
+    "body": ["@at-root ${1:<selector>} { ${2:content} }"],
+    "description": [""]
+  },
+  "@at-root with rule (use with or without)": {
+    "prefix": ["@at-root(with, without)"],
+    "body": ["@at-root (${1|with,without|}: ${2:<rules...>}) { ${3:content} }"],
+    "description": [""]
+  },
+
+  "@if": {
+    "prefix": ["@if"],
+    "body": ["@if ${1:<expression>} { $2 }"],
+    "description": [""]
+  },
+  "@else": {
+    "prefix": ["@else"],
+    "body": ["@else ${1:<expression>} { $2 }"],
+    "description": [""]
+  },
+  "@else if": {
+    "prefix": ["@elseif"],
+    "body": ["@else if ${1:<expression>} { $2 }"],
+    "description": [""]
+  },
+  "@each(list)": {
+    "prefix": ["@each(list)"],
+    "body": ["@each \\$val in ${1:<list>} { $2 }"],
+    "description": [""]
+  },
+  "@each(map)": {
+    "prefix": ["@each(map)"],
+    "body": ["@each \\$key, \\$val in ${1:<map>} { $2 }"],
+    "description": [""]
+  },
+  "@each(destructuring) 分割代入": {
+    "prefix": ["@each(destructuring)"],
+    "body": [
+      "see https://sass-lang.com/documentation/at-rules/control/each#destructuring"
+    ],
+    "description": [""]
+  },
+  "@for(include last index)": {
+    "prefix": ["@for(include last index)"],
+    "body": ["@for \\$i from ${1:<from>} through ${2:<to>} { $3 }"],
+    "description": [""]
+  },
+  "@for(exclude last index)": {
+    "prefix": ["@for(exclude last index)"],
+    "body": ["@for \\$i from ${1:<from>} to ${2:<to>} { $3 }"],
+    "description": [""]
+  },
+  "@while": {
+    "prefix": ["@while"],
+    "body": [" @while ${1:<bool>} { $2 }"],
+    "description": [""]
+  },
+  "declear $list": {
+    "prefix": ["declear $list"],
+    "body": ["\\$${1:name}: (${2:val} , ${3:val});"],
+    "description": [""]
+  },
+  "declear $map": {
+    "prefix": ["declear $map"],
+    "body": ["\\$${1:name}: (${2:key}:${3:val} , ${4:key}:${5:val});"],
+    "description": [""]
+  },
+  // built-in module
+  "sass built-in module": {
+    "prefix": ["@use sass:<module>"],
+    "body": ["@use \"sass:${1|color,list,map,math,meta,selector,string|}\";"],
+    "description": [""]
+  }
+}

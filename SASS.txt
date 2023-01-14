@@ -166,10 +166,13 @@ $variable: 12px
 SASS固有でよく使いそうなものはこんな感じ
 ・list: 以下の二つは同じ意味。実際に 使うときは@eachとかで使う。Immutable(定義後に変更不可)
   (val, val, val)、(val val val)
+  ★immutable(不変)なリストとなる。
 ・map: Immutable(定義後に変更不可)　これ自体は有効なCSSではないので、ふつうは@forとかで展開して使う。
   ("regular": 400, "medium": 500, "bold": 700);
+  ★immutable(不変)なマップとなる。
   ※キーはダブルクォーテーションで囲うことを推奨。
 ・true false ※@ifとかif()で使う
+  ⇒演算子でand orを使用可能
 ・null ※主に関数の戻り値で使う。nullの場合はCSSは未定義となる。
 ・$_privateVal プライベート変数(先頭を_または-で始める)　定義したファイル内からしか参照できない
 
