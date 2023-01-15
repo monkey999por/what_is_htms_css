@@ -168,5 +168,413 @@
     "prefix": ["@use sass:<module>"],
     "body": ["@use \"sass:${1|color,list,map,math,meta,selector,string|}\";"],
     "description": [""]
+  },
+
+  // tentative
+  // NOTE: SASS Built-In Moduleのインテリセンスが無さそうなので暫定的に定義しておく。
+  // sass:list
+  "Returns a copy of $list with $val added to the end.": {
+    "prefix": ["list.append()"],
+    "body": [
+      "list.append(\\$${1:list}, \\$${2:val}, \\$${3:separator: auto});"
+    ],
+    "description": ["separator: space or comma or slash or auto(default)"]
+  },
+  "Returns the index of $value in $list.": {
+    "prefix": ["list.index()"],
+    "body": ["list.index(\\$${1:list}, \\$${2:val});"],
+    "description": [""]
+  },
+  "Returns whether $list has square brackets.": {
+    "prefix": ["list.is-bracketed()"],
+    "body": ["list.is-bracketed(\\$${1:list})"],
+    "description": [
+      "@debug list.is-bracketed(1px 2px 3px); // false\n",
+      "@debug list.is-bracketed([1px, 2px, 3px]); // true"
+    ]
+  },
+  "Returns a new list containing the elements of $list1 followed by the elements of $list2.": {
+    "prefix": ["list.join()"],
+    "body": [
+      "list.join(\\$${1:list1}, \\$${2:list2}, ${3:\\$separator: auto}, ${4:\\$bracketed: auto});"
+    ],
+    "description": [
+      "separator: space | comma | slash | auto(default)",
+      "bracketed: true | false | auto(default)"
+    ]
+  },
+  "Returns the length of $list.": {
+    "prefix": ["list.length()"],
+    "body": ["list.length(\\$${1:list});"]
+  },
+  "Returns the name of the separator used by $list, either space, comma, or slash.": {
+    "prefix": ["list.separator()"],
+    "body": ["list.separator(\\$${1:list});"]
+  },
+  "Returns the element of $list at index $index.": {
+    "prefix": ["list.nth()"],
+    "body": ["list.nth(\\$${1:list} , \\$${2:index});"]
+  },
+  "Returns a copy of $list with the element at index $n replaced with $value.": {
+    "prefix": ["list.set-nth()"],
+    "body": ["list.set-nth(\\$${1:list} , \\$${2:index} , \\$${3:val});"]
+  },
+  "Returns a slash-separated list that contains $elements.": {
+    "prefix": ["list.slash()"],
+    "body": ["list.slash(${1:<elements...>});"],
+    "description": ["WARNING: deprecated. see docs."]
+  },
+  "Combines every list in $lists into a single list of sub-lists.": {
+    "prefix": ["list.zip()"],
+    "body": ["list.zip(\\$${1:list});"]
+  },
+  // sass:map
+  "Identical to map.merge(), except that nested map values are also recursively merged.": {
+    "prefix": ["map.deep-merge()"],
+    "body": ["map.deep-merge(\\$${1:map1}, \\$${2:map2});"],
+    "description": [""]
+  },
+  "If $keys is empty, returns a copy of $map without a value associated with $key.": {
+    "prefix": ["map.deep-remove()"],
+    "body": ["map.deep-remove(\\$${1:map} , \\$${2:key}, \\$${2:keys...});"],
+    "description": [""]
+  },
+  "map.get()": {
+    "prefix": ["map.get()"],
+    "body": ["map.get(\\$${1:map} , \\$${2:key}, \\$${3:keys...});"],
+    "description": [
+      "If $keys is empty, returns the value in $map associated with $key.",
+      "If $map doesn’t have a value associated with $key, returns null."
+    ]
+  },
+  "If $keys is empty, returns whether $map contains a value associated with $key.": {
+    "prefix": ["map.has-key()"],
+    "body": ["map.has-key(\\$${1:map} , \\$${2:key}, \\$${3:keys...});"],
+    "description": [""]
+  },
+  "Returns a comma-separated list of all the keys in $map.": {
+    "prefix": ["map.keys()"],
+    "body": ["map.keys(\\$${1:map});"],
+    "description": [""]
+  },
+  "map.merge($map1, $map2)": {
+    "prefix": ["map.marge()"],
+    "body": ["map.marge(\\$${1:map1} , \\$${2:keys...}, \\$${3:map2});"],
+    "description": [""]
+  },
+  "Returns a copy of $map without any values associated with $keys.": {
+    "prefix": ["map.remove()"],
+    "body": ["map.remove(\\$${1:map} , \\$${2:keys...});"],
+    "description": [""]
+  },
+  "Returns a comma-separated list of all the values in $map.": {
+    "prefix": ["map.values()"],
+    "body": ["map.values(\\$${1:map});"],
+    "description": []
+  },
+  // sass:math
+  "math has mathematical numbers": {
+    "prefix": ["math.$var"],
+    "body": ["math.\\$${1|e,pi|}"],
+    "description": []
+  },
+  "Rounds $number up to the next highest whole number.": {
+    "prefix": ["math.ceil()"],
+    "body": ["math.ceil(\\$${1:number});"],
+    "description": []
+  },
+  "Restricts $number to the range between $min and $max. If $number is less than $min this returns $min, and if it’s greater than $max this returns $max.": {
+    "prefix": ["math.clamp()"],
+    "body": ["math.clamp(\\$${1:min} , \\$${2:number} , \\$${3:max});"],
+    "description": []
+  },
+  "Rounds $number down to the next lowest whole number.": {
+    "prefix": ["math.floor()"],
+    "body": ["math.floor(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the highest of one or more numbers.": {
+    "prefix": ["math.max()"],
+    "body": ["math.max(\\$${1:number...});"],
+    "description": []
+  },
+  "Returns the lowest of one or more numbers.": {
+    "prefix": ["math.min()"],
+    "body": ["math.min(\\$${1:number...});"],
+    "description": []
+  },
+  "Rounds $number to the nearest whole number.": {
+    "prefix": ["math.round()"],
+    "body": ["math.round(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the absolute value of $number. If $number is negative, this returns -$number, and if $number is positive, it returns $number as-is.": {
+    "prefix": ["math.abs()"],
+    "body": ["math.abs(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the length of the n-dimensional vector that has components equal to each $number. For example, for three numbers a, b, and c, this returns the square root of a² + b² + c².": {
+    "prefix": ["math.hypot()"],
+    "body": ["math.hypot(\\$${1:number...});"],
+    "description": []
+  },
+  "Returns the logarithm of $number with respect to $base. If $base is null, the natural log is calculated.": {
+    "prefix": ["math.log()"],
+    "body": ["math.log(\\$${1:number} , \\$${2:base: null});"],
+    "description": ["$base: default null"]
+  },
+  "Raises $base to the power of $exponent.": {
+    "prefix": ["math.pow()"],
+    "body": ["math.pow(\\$${1:base} , \\$${2:exponent});"],
+    "description": "$base and $exponent must be unitless."
+  },
+  "Returns the square root of $number.": {
+    "prefix": ["math.sqrt()"],
+    "body": ["math.sqrt(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the cosine of $number.": {
+    "prefix": ["math.cos()"],
+    "body": ["math.cos(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the sine of $number.": {
+    "prefix": ["math.sin()"],
+    "body": ["math.sin(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the tangent of $number.": {
+    "prefix": ["math.tan()"],
+    "body": ["math.tan(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the arccosine of $number in deg.": {
+    "prefix": ["math.acos()"],
+    "body": ["math.acos(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the arcsine of $number in deg.": {
+    "prefix": ["math.asin()"],
+    "body": ["math.asin(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the arctangent of $number in deg.": {
+    "prefix": ["math.atan()"],
+    "body": ["math.atan(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the 2-argument arctangent of $y and $x in deg.": {
+    "prefix": ["math.atan2()"],
+    "body": ["math.atan2(\\$${1:x} , \\$${2:y});"],
+    "description": []
+  },
+  "Returns whether $number1 and $number2 have compatible units": {
+    "prefix": ["math.compatible()"],
+    "body": ["math.compatible(\\$${1:number1} , \\$${2:number2});"],
+    "description": []
+  },
+  "Returns whether $number has no units.": {
+    "prefix": ["math.is-unitless()"],
+    "body": ["math.is-unitless(\\$${1:number});"],
+    "description": []
+  },
+  "Returns a string representation of $number‘s units.": {
+    "prefix": ["math.unit()"],
+    "body": ["math.unit(\\$${1:number});"],
+    "description": []
+  },
+  "Returns the result of dividing $number1 by $number2.": {
+    "prefix": ["math.div()"],
+    "body": ["math.div(\\$${1:number1} , \\$${2:number2});"],
+    "description": []
+  },
+  "Converts a unitless $number (usually a decimal between 0 and 1) to a percentage.": {
+    "prefix": ["math.percentage()"],
+    "body": ["math.percentage(\\$${1:number1});"],
+    "description": []
+  },
+  "If $limit is null, returns a random decimal number between 0 and 1.": {
+    "prefix": ["math.random()"],
+    "body": ["math.random(\\$${1:limit: null});"],
+    "description": ["$limit: default null"]
+  },
+  // sass:meta
+  "Loads the module at $url and includes its CSS as though it were written as the contents of this mixin.": {
+    "prefix": ["meta.load-css()"],
+    "body": ["meta.load-css(\\$${1:url} , \\$${2:with: null});"],
+    "description": []
+  },
+  "Returns the arguments for the given calculation.": {
+    "prefix": ["meta.calc-args()"],
+    "body": ["meta.calc-args(\\$${1:calc});"],
+    "description": []
+  },
+  "Returns the name of the given calculation.": {
+    "prefix": ["meta.calc-name()"],
+    "body": ["meta.calc-name(\\$${1:calc});"],
+    "description": []
+  },
+  "Invokes $function with $args and returns the result.": {
+    "prefix": ["meta.call()"],
+    "body": ["meta.call(\\$${1:function} , \\$${2:args...});"],
+    "description": []
+  },
+  "Returns whether the current mixin was passed a @content block.": {
+    "prefix": ["meta.content-exists()"],
+    "body": ["meta.content-exists();"],
+    "description": []
+  },
+  "Returns whether the current Sass implementation supports $feature.": {
+    "prefix": ["meta.feature-exists()"],
+    "body": ["meta.feature-exists(\\$${1:feature});"],
+    "description": []
+  },
+  "Returns whether a function named $name is defined, either as a built-in function or a user-defined function.": {
+    "prefix": ["meta.function-exists()"],
+    "body": ["meta.function-exists(\\$${1:name} , \\$${2:module: null});"],
+    "description": []
+  },
+  "Returns the function named $name.": {
+    "prefix": ["meta.get-function()"],
+    "body": [
+      "meta.get-function(\\$${1:name} , \\$${2:css: false} , \\$${3:module: null});"
+    ],
+    "description": []
+  },
+  "Returns whether a global variable named $name (without the $) exists.": {
+    "prefix": ["meta.global-variable-exists()"],
+    "body": [
+      "meta.global-variable-exists(\\$${1:name} , \\$${2:module: null});"
+    ],
+    "description": []
+  },
+  "Returns a string representation of $value.": {
+    "prefix": ["meta.inspect()"],
+    "body": ["meta.inspect(\\$${1:value});"],
+    "description": []
+  },
+  "Returns the keywords passed to a mixin or function that takes arbitrary arguments. The $args argument must be an argument list.": {
+    "prefix": ["meta.keywords()"],
+    "body": ["meta.keywords(\\$${1:args});"],
+    "description": []
+  },
+  "Returns whether a mixin named $name exists.": {
+    "prefix": ["meta.mixin-exists()"],
+    "body": ["meta.mixin-exists(\\$${1:name} , \\$${2:module: null});"],
+    "description": []
+  },
+  "Returns all the functions defined in a module, as a map from function names to function values.": {
+    "prefix": ["meta.module-functions()"],
+    "body": ["meta.module-functions(\\$${1:module});"],
+    "description": []
+  },
+  "Returns all the variables defined in a module, as a map from variable names (without $) to the values of those variables.": {
+    "prefix": ["meta.module-variables()"],
+    "body": ["meta.module-variables(\\$${1:module});"],
+    "description": []
+  },
+  "Returns the type of $value.": {
+    "prefix": ["meta.type-of()"],
+    "body": ["meta.type-of(\\$${1:value});"],
+    "description": []
+  },
+  "Returns whether a variable named $name (without the $) exists in the current scope.": {
+    "prefix": ["meta.variable-exists()"],
+    "body": ["meta.variable-exists(\\$${1:name});"],
+    "description": []
+  },
+
+  // sass:selector
+  "Returns whether the selector $super matches all the elements that the selector $sub matches.": {
+    "prefix": ["selector.is-superselector()"],
+    "body": ["selector.is-superselector(\\$${1:super} , \\$${2:sub});"],
+    "description": []
+  },
+  "Combines $selectors without descendant combinators—that is, without whitespace between them.": {
+    "prefix": ["selector.append()"],
+    "body": ["selector.append(${1:selectores...});"],
+    "description": []
+  },
+  "Extends $selector as with the @extend rule.": {
+    "prefix": ["selector.extend()"],
+    "body": [
+      "selector.extend(\\$${1:selector} , \\$${2:extendee} , \\$${3:extender});"
+    ],
+    "description": []
+  },
+  "Combines $selectors as though they were nested within one another in the stylesheet.": {
+    "prefix": ["selector.nest()"],
+    "body": ["selector.nest(${1:selectores...});"],
+    "description": []
+  },
+  "Returns $selector in the selector value format.": {
+    "prefix": ["selector.parse()"],
+    "body": ["selector.parse(${1:selectore});"],
+    "description": []
+  },
+  "Returns a copy of $selector with all instances of $original replaced by $replacement.": {
+    "prefix": ["selector.replace()"],
+    "body": [
+      "selector.replace(\\$${1:selector} , \\$${2:original} , \\$${3:replacement});"
+    ],
+    "description": []
+  },
+  "Returns a selector that matches only elements matched by both $selector1 and $selector2.": {
+    "prefix": ["selector.unify()"],
+    "body": ["selector.unify(\\$${1:selector1} , \\$${2:selector2});"],
+    "description": []
+  },
+  "Returns a list of simple selectors in $selector.": {
+    "prefix": ["selector.simple-selectors()"],
+    "body": ["selector.simple-selectors(${1:selectore});"],
+    "description": []
+  },
+  // sass:string
+  "Returns $string as a quoted string.": {
+    "prefix": ["string.quote()"],
+    "body": ["string.quote(\\$${1:string});"],
+    "description": []
+  },
+  "Returns the first index of $substring in $string, or null if $string doesn’t contain $substring.": {
+    "prefix": ["string.index()"],
+    "body": ["string.index(\\$${1:string} , \\$${2:substring});"],
+    "description": []
+  },
+  "Returns a copy of $string with $insert inserted at $index.": {
+    "prefix": ["string.insert()"],
+    "body": ["string.insert(\\$${1:string} , \\$${2:insert} , \\$${3:index});"],
+    "description": []
+  },
+  "Returns the number of characters in $string.": {
+    "prefix": ["string.length()"],
+    "body": ["string.length(\\$${1:string});"],
+    "description": []
+  },
+  "Returns the slice of $string starting at index $start-at and ending at index $end-at (both inclusive).": {
+    "prefix": ["string.slice()"],
+    "body": [
+      "string.slice(\\$${1:string} , \\$${2:start-at} , \\$${3:end-at: -1});"
+    ],
+    "description": ["$end-at: default -1"]
+  },
+  "Returns a copy of $string with the ASCII letters converted to upper case.": {
+    "prefix": ["string.to-upper-case()"],
+    "body": ["string.to-upper-case(\\$${1:string});"],
+    "description": []
+  },
+  "Returns a copy of $string with the ASCII letters converted to lower case.": {
+    "prefix": ["string.to-lower-case()"],
+    "body": ["string.to-lower-case(\\$${1:string});"],
+    "description": []
+  },
+  "Returns a randomly-generated unquoted string that’s guaranteed to be a valid CSS identifier and to be unique within the current Sass compilation.": {
+    "prefix": ["string.unique-id()"],
+    "body": ["string.unique-id();"],
+    "description": []
+  },
+  "Returns $string as an unquoted string. This can produce strings that aren’t valid CSS, so use with caution.": {
+    "prefix": ["string.unquote()"],
+    "body": ["string.unquote(\\$${1:string});"],
+    "description": []
   }
 }
